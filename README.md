@@ -13,7 +13,7 @@ Tyler D'Angelo
 3. Bootstrap (_Grid System_)
 4. Javascript
 5. [Github](https://github.com/tydangelo18).
-6. [Github Pages](https://tydangelo18.github.io/randompasswordgenerator/.).
+6. [Github Pages](https://tydangelo18.github.io/codingquiz/.).
 
 ### Application Features
 
