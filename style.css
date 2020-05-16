@@ -1,0 +1,212 @@
+/*Mobile Responsiveness*/
+
+body {
+  background: #f09898;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.quiz_wrapper {
+  height: 600px;
+  width: 335px;
+  background-color: rgba(110, 109, 109, 0.317);
+  margin: 29px auto;
+  border-radius: 10px;
+  border: 3px solid white;
+  padding: 30px;
+}
+
+.quiz_wrapper .question {
+  padding: 15px;
+  background-color: #1ddd4a;
+  box-shadow: 2px 2px 0px rgba(58, 58, 58, 0.848);
+  border-radius: 10px;
+  color: #ffffff;
+  font-size: 25px;
+  width: 100%;
+  height: 25%;
+}
+
+.quiz_wrapper .options {
+  width: 100%;
+}
+
+.quiz_wrapper .options ul {
+  list-style: none;
+  padding: 0px;
+}
+
+.quiz_wrapper .options ul li {
+  background-color: #040e14;
+  opacity: 0.8;
+  border: solid 2px white;
+  width: 100%;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 17px;
+  color: #ffffff;
+}
+
+.quiz_wrapper .options ul li:active {
+  box-shadow: 3px 3px 3px 3px white; /* Use the DOM to hold this when selected*/
+}
+
+.quiz_wrapper .score {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 0px;
+}
+
+.next {
+  order: 2;
+}
+
+.score-card {
+  order: 1;
+}
+
+.quiz_wrapper .score .next button {
+  padding: 10px 30px;
+  color: white;
+  background-color: #1ddd4a;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  box-shadow: 2px 2px 0px #323435;
+  outline: none;
+  width: 110px;
+}
+
+.quiz_wrapper .score .next button:active {
+  box-shadow: 0px 3px 0px transparent;
+}
+
+.quiz_wrapper .score .score-card {
+  font-size: 20px;
+  color: black;
+  line-height: 42px;
+  display: none;
+}
+
+.quiz_wrapper .score .score-card span {
+  background-color: #140f0a;
+  opacity: 0.8;
+  padding: 5px 20px;
+  border-radius: 10px;
+  color: #ffffff;
+  border: solid 2px #ffffff;
+  box-shadow: 2px 2px 0px #323435;
+  margin-right: 5px;
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    background: #f09898;
+    margin: 0;
+    padding: 0;
+  }
+
+  * {
+    box-sizing: border-box;
+    font-family: sans-serif;
+  }
+
+  .quiz_wrapper {
+    height: 500px;
+    width: 650px;
+    background-color: rgba(110, 109, 109, 0.317);
+    margin: 100px auto;
+    border-radius: 10px;
+    border: 3px solid white;
+    padding: 30px;
+  }
+
+  .quiz_wrapper .question {
+    padding: 15px;
+    background-color: #1ddd4a;
+    box-shadow: 2px 2px 0px rgba(58, 58, 58, 0.848);
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 25px;
+    width: 100%;
+    height: 20%;
+  }
+
+  .quiz_wrapper .options {
+    width: 100%;
+  }
+
+  .quiz_wrapper .options ul {
+    list-style: none;
+    padding: 0px;
+  }
+
+  .quiz_wrapper .options ul li {
+    background-color: #040e14;
+    opacity: 0.8;
+    border: solid 2px white;
+    width: 100%;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 17px;
+    color: #ffffff;
+  }
+
+  .quiz_wrapper .options ul li:active {
+    box-shadow: 3px 3px 3px 3px white; /* Use the DOM to hold this when selected*/
+  }
+
+  .quiz_wrapper .score {
+    display: flex;
+    justify-content: space-around;
+    padding: 15px 0px;
+  }
+
+  .next {
+    order: 2;
+  }
+
+  .score-card {
+    order: 1;
+  }
+
+  .quiz_wrapper .score .next button {
+    padding: 10px 30px;
+    color: white;
+    background-color: #1ddd4a;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+    box-shadow: 2px 2px 0px #323435;
+    outline: none;
+    width: 230px;
+  }
+
+  .quiz_wrapper .score .next button:active {
+    box-shadow: 0px 3px 0px transparent;
+  }
+
+  .quiz_wrapper .score .score-card {
+    font-size: 20px;
+    color: black;
+    line-height: 45px;
+  }
+
+  .quiz_wrapper .score .score-card span {
+    background-color: #140f0a;
+    opacity: 0.8;
+    padding: 5px 20px;
+    border-radius: 10px;
+    color: #ffffff;
+    border: solid 2px #ffffff;
+    box-shadow: 2px 2px 0px #323435;
+  }
+}
