@@ -21,14 +21,13 @@ const quiz = {
     },
 
     {
-      q:
-        "An unordered collection of properties, each of which has a name and a value is called?",
+      q: "An unordered collection of properties is called?",
       options: ["String", "Object", "Float", "All of the above"],
       answer: 2,
     },
 
     {
-      q: "What is the purpose of a return statement in a function?",
+      q: "What does a return statement do?",
       options: [
         "Returns the value and continues executing the rest of the statements",
         "Returns the value and stops the program",
@@ -73,15 +72,13 @@ const quiz = {
     },
 
     {
-      q:
-        "The keyword or property used to refer to an object through which they were invoked is",
+      q: "The keyword used to invoke an object is:",
       options: ["from", "to", "this", "object"],
       answer: 3,
     },
 
     {
-      q:
-        "Which method is used to add an event such as 'click' to an element in Javascript?",
+      q: "Which method adds an event to an Element?",
       options: [
         ".getElementbyId",
         ".addEventListener",
@@ -104,8 +101,9 @@ const quiz = {
   ],
 
   index: 0,
+  score: 0,
 
-  load: function () {
+  start: function () {
     if (this.index <= this.questions.length - 1) {
       quizDisplay.innerHTML =
         this.index + 1 + ") " + this.questions[this.index].q;
@@ -119,22 +117,23 @@ const quiz = {
 
       // When quiz is complete, prompt the user to refresh to try again and show score.
     } else {
-      quizDisplay.innerHTML = "Quiz Complete.";
+      quizDisplay.innerHTML = "Quiz Complete. Press F5 to try again.";
       choice1.style.display = "none";
       choice2.style.display = "none";
       choice3.style.display = "none";
       choice4.style.display = "none";
       scoreCard.style.display = "inline";
       quizScore.style.display = "inline";
-      btn.innerHTML = "press F5 to try again.";
-      btn.body.style.background = "yellow";
+      btn.style.display = "none";
+      body.style.background = "yellow";
+      this.saveScore();
     }
   },
 
   // Move on to the next question.
   next: function () {
     this.index++;
-    this.load();
+    this.start();
   },
 
   check: function (answer) {
@@ -149,42 +148,40 @@ const quiz = {
     }
   },
 
-  notClickAble: function () {
+  incorrectAnswer: function () {
     for (let i = 0; i < choices.children.length; i++) {
       choices.children[i].getElementsByClassName.pointerEvents = "none";
     }
   },
 
-  clickAble: function () {
+  correctAnswer: function () {
     for (let i = 0; i < choices.children.length; i++) {
       choices.children[i].getElementsByClassName.pointerEvents = "auto";
       choices.children[i].className = "";
     }
   },
 
-  score: 0,
   quizScore: function () {
     quizScore.innerHTML = this.score + "/" + this.questions.length;
   },
+
+  // Save scores to local storage.
+  saveScore: function () {
+    let scores = JSON.parse(localStorage.getItem("scores")) || [];
+    scores.push(this.score);
+
+    localStorage.setItem("scores", JSON.stringify(scores));
+  },
 };
 
-window.onload = quiz.load();
+window.onload = quiz.start();
 
 function button(answer) {
   quiz.check(answer);
-  quiz.notClickAble();
+  quiz.incorrectAnswer();
 }
 
 function next() {
   quiz.next();
-  quiz.clickAble();
+  quiz.correctAnswer();
 }
-
-function saveQuiz() {
-  let scores = JSON.parse(localStorage.getItem("scores")) || [];
-  scores.push(score);
-
-  localStorage.setItem("scores", JSON.stringify(scores));
-}
-console.log(saveQuiz);
-console.log(quizScore);

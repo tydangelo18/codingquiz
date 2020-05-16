@@ -1,36 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <title>Javascript Quiz</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="quiz_wrapper">
-        <div class="question" id="display"></div>
+      <div class="question" id="display"></div>
 
-        <div class="options">
-            <ul id="choices">
-                <li id="choice1" onclick="button(this)"></li>
-                <li id="choice2" onclick="button(this)"></li>
-                <li id="choice3" onclick="button(this)"></li>
-                <li id="choice4" onclick="button(this)"></li>
-            </ul>
+      <div class="options">
+        <ul id="choices">
+          <li id="choice1" onclick="button(this)"></li>
+          <li id="choice2" onclick="button(this)"></li>
+          <li id="choice3" onclick="button(this)"></li>
+          <li id="choice4" onclick="button(this)"></li>
+        </ul>
+      </div>
+      <div class="score">
+        <div class="next">
+          <button type="button" onclick="next()" id="button">Next.</button>
         </div>
-        <div class="score">
-            <div class="next">
-                <button type="button" onclick="next()" id="button">Next.</button>
-            </div>
-            <div class="score-card" id="scoreCard">
-                Score: <span id="quizScore"></span>
-            </div>
+        <div class="score-card" id="scoreCard">
+          Score: <span id="quizScore"></span>
         </div>
+      </div>
     </div>
 
     <script src="script.js"></script>
-</body>
-
+  </body>
 </html>
